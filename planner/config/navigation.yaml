@@ -1,0 +1,28 @@
+pct_planner:
+  ros__parameters:
+    use_sim_time: false
+    frame_id: map
+    pose_topic: /pose_stamped
+    goal_topic: /goal_pose
+    legacy_goal_topic: /move_base_simple/goal
+    path_topic: /pct_path
+    cancel_input_topic: /navigation/cancel
+    cancel_output_topic: /scan_planner/cancel
+    preempt_output_topic: /scan_planner/preempt
+    status_topic: /scan_planner/goal_status
+    local_status_topic: /scan_planner/local_goal_status
+    pose_timeout: 1.0
+    start_layer: -1
+    goal_layer: -1
+    keep_goal_on_start_layer: false
+    path_height_offset: 0.5
+    align_path_z_to_pose: true
+    max_path_z_alignment: 3.0
+    stair_centerline.enabled: false
+    stair_centerline.max_cost: 20.0
+    stair_centerline.max_support_error: 0.25
+    stair_centerline.max_support_step: 0.30
+    stair_centerline.max_layer_step: 1
+    stair_centerline.smoothing_window: 9
+    stair_centerline.minimum_xy_length: 0.5
+    stair_centerline.minimum_vertical_span: 0.5

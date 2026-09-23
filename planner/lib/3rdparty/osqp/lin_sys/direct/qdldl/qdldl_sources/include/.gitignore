@@ -1,0 +1,4 @@
+qdldl_types.h
+
+# Public aggregate: retain the reviewed offline-build header.
+!qdldl_types.h

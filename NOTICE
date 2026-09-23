@@ -1,0 +1,56 @@
+Copyright (c) 2024 Bowen Yang <byangar@connect.ust.hk>, Jie Cheng <jchengai@connect.ust.hk>
+
+PCT_planner contains several third party libraries, with documentation of licensing
+and modifications as follows:
+
+- gtsam 4.1.1: Georgia Tech Smoothing and Mapping Library
+        - Local changes are limited to the exact BSD-3-Clause identifier in
+            package.xml and wrap/setup.py.
+        - Licensed under BSD-3-Clause; see
+            planner/lib/3rdparty/gtsam-4.1.1/LICENSE.BSD.
+- osqp 0.6.2: The Operator Splitting QP Solver
+        - The local snapshot adds include/osqp_configure.h and
+            lin_sys/direct/qdldl/qdldl_sources/include/qdldl_types.h for the retained
+            offline/aarch64 build configuration; no upstream file is modified.
+        - Licensed under Apache-2.0; see planner/lib/3rdparty/osqp/LICENSE and NOTICE.
+- pybind11 2.11.0.dev1: Seamless operability between C++11 and Python
+        - The retained files are byte-identical to the recorded PCT baseline.
+        - License text is in planner/lib/3rdparty/pybind11/LICENSE.
+- Eigen embedded by GTSAM
+        - The retained files are byte-identical to the recorded PCT baseline.
+        - Eigen's COPYING.README says the tree is primarily MPL-2.0 while some
+            files use BSD or LGPL terms. Preserve the complete COPYING.* set; this
+            project does not claim that every embedded Eigen file is MPL-2.0-only.
+
+This program is free software; you can redistribute it and/or modify
+it under the terms of the GNU General Public License as published by
+the Free Software Foundation; either version 2 of the License, or
+(at your option) any later version.
+
+This program is distributed in the hope that it will be useful,
+but WITHOUT ANY WARRANTY; without even the implied warranty of
+MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+GNU General Public License for more details.
+
+You should have received a copy of the GNU General Public License along
+with this program; if not, write to the Free Software Foundation, Inc.,
+51 Franklin Street, Fifth Floor, Boston, MA 02110-1301 USA.
+
+Local derivative provenance
+---------------------------
+
+The RC2026_Map_Planner tree was derived in 2026 from:
+
+    https://github.com/byangw/PCT_planner.git
+    baseline commit 35cd73fd82bcd51bc538429294af7646b2a09815
+
+Local changes include ROS 2 Humble runtime integration, configurable
+navigation parameters, PCD/tomogram conversion and transport tools, map and
+goal visualization, a ROS 2 navigation wrapper, aarch64 build corrections,
+planner/smoother portability fixes, an opt-in validated stair-centerline path
+post-processor with conservative fallback, exact BSD-3-Clause metadata for the
+bundled GTSAM package, and regression tests. Runtime maps,
+tomograms, recordings, handoff manifests, generated extension modules, and
+build/install directories are data or generated artifacts and are not part of
+the public corresponding source. See PROVENANCE.md and the offline verification
+script for the auditable, byte-level dependency comparison.

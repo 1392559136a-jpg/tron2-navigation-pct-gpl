@@ -1,0 +1,5 @@
+# Ignore Cmake-generated osqp_configure.h file
+osqp_configure.h
+
+# Public aggregate: retain the reviewed offline-build header.
+!osqp_configure.h
